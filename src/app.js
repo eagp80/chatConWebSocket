@@ -7,9 +7,9 @@ import __dirname from "./utils.js";
 const app= express();
 app.use(express.static(`${__dirname}/public`));
 
-app.engine('handlebars', handlebars.engine());
-app.set('views', `${__dirname}/views`);
-app.set('view engine', 'handlebars');
+app.engine('handlebars', handlebars.engine());//arrancamos y le ponemos un alias a el motor 
+app.set('views', `${__dirname}/views`);//le decimos a app donde estaran las vistas
+app.set('view engine', 'handlebars');//le decimos a app que el motor de vistas es handlebars
 
 app.use('/',viewsRouter);
 
